@@ -21,15 +21,15 @@
 @isset($bbs)
     @foreach($bbs as $b)
     <h2>{{ $b->name }}さんの直前の投稿</h2>
-    {{ $b->comment }}
-    <img src="{{ asset('storage/' . $b->pic) }}">
+    {{ $b->comment }}<br>
+    <img src="data:image/gif;base64,<?php $b->pic ?>" height="200px" width="150px">
     <br><hr>
     @endforeach
 @endisset
 
 <!-- フォームエリア -->
 <h2>フォーム</h2>
-<form action="/bbs" method="POST">
+<form action="{{ url('bbs') }}" method="POST" enctype="multipart/form-data">
     名前:<br>
     <input name="name">
     <br>

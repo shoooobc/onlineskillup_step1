@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Model\Bbs;
 
@@ -30,19 +31,22 @@ class BbsController extends Controller
                 'image',
                 // MIMEタイプを指定
                 'mimes:jpeg,png',
-            ]
+              ]
         ]);
 
         // 投稿内容の受け取って変数に入れる
         $name = $request->input('name');
         $comment = $request->input('comment');
-        $path = $request->file->store('public');
+
+        $path = base64_encode(file_get_contents($request->file('pic')->getRealPath()));
+
+//        $path = $request->file('pic')->store('public');
 
         Bbs::insert(["name" => $name,"comment" => $comment,'pic'=>basename($path)]);
 
         $bbs = Bbs::all(); // 全データの取り出し
 
-      if ($request->file('file')->isValid([])) {
+      if ($request->file('pic')->isValid([])) {
             return view('bbs.index')->with('bbs', $bbs);
         } else {
             return redirect()
@@ -50,8 +54,5 @@ class BbsController extends Controller
                 ->withInput()
                 ->withErrors();
         }
-
-        // 変数をビューに渡す
-//        return view('bbs.index',["bbs"=> $bbs]);
     }
 }
