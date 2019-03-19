@@ -68,4 +68,10 @@ class LoginController extends Controller
 
         return redirect('github');
     }
+
+    public function postLogout()
+    {
+        \Auth::logout();
+        return redirect()->to('/logout');
+    }
 }

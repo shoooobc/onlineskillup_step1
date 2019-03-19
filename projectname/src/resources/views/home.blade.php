@@ -13,25 +13,18 @@
     </ul>
 @endif
 
+<p>{{ $pic }}</p>
+
+<img src="data:image/gif;base64,{{ $pic }}">
+
 <!-- フォーム -->
-<form action="{{ url('upload') }}" method="POST" enctype="multipart/form-data">
-
-    <!-- アップロードした画像。なければ表示しない -->
-    @isset ($filename)
-        <div>
-            @foreach($filename as $pic)
-            <img src="{{ asset('User/Desktop/iPhone6/shoooo/スクリーンショット/' . $pic) }}">
-            @endforeach
-        </div>
-
-    @endisset
-
-    <label for="photo">画像ファイル:</label>
-    <input type="file" class="form-control" name="pic">
-    <br>
-    <hr>
-    {{ csrf_field() }}
-    <button class="btn btn-success"> Upload </button>
+<form action="{{ url('upload') }}" method="POST" enctype="multipart/form-data" class="post_form">
+    <div class="form_parts">
+        <input type="file" name="pic">
+        <br>
+        {{ csrf_field() }}
+        <button class="btn btn-success">投稿</button>
+    </div>
 </form>
 </body>
 </html>

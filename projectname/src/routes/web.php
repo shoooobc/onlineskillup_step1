@@ -30,3 +30,6 @@ Route::post('user', 'User\UserController@updateUser');
 
 Route::get('/', 'HomeController@index');
 Route::post('/upload', 'HomeController@upload');
+
+Route::get('login/logout', 'Auth\LoginController@postLogout')->name('logout');
+Route::get('/logout', 'LogoutController@index');

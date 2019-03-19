@@ -35,14 +35,14 @@ class BbsController extends Controller
         ]);
 
         // 投稿内容の受け取って変数に入れる
-        $name = $request->input('name');
+        $nme = $request->input('name');
         $comment = $request->input('comment');
 
         $path = base64_encode(file_get_contents($request->file('pic')->getRealPath()));
 
 //        $path = $request->file('pic')->store('public');
 
-        Bbs::insert(["name" => $name,"comment" => $comment,'pic'=>basename($path)]);
+        Bbs::insert(["name" => $nme,"comment" => $comment,'pic'=>$path]);
 
         $bbs = Bbs::all(); // 全データの取り出し
 

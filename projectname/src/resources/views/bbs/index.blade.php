@@ -6,6 +6,7 @@
 <body>
 
 <h1>掲示板</h1>
+<a href="/login/github">ログインする</a>
 
 <!-- エラーメッセージエリア -->
 @if ($errors->any())
@@ -22,7 +23,7 @@
     @foreach($bbs as $b)
     <h2>{{ $b->name }}さんの直前の投稿</h2>
     {{ $b->comment }}<br>
-    <img src="data:image/gif;base64,<?php $b->pic ?>" height="200px" width="150px">
+    <img src="data:image/gif;base64,{{ $b->pic }}" height="200px" width="150px">
     <br><hr>
     @endforeach
 @endisset

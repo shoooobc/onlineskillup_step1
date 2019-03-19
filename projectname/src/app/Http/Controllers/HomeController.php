@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 
+
 class HomeController extends Controller
 {
     /**
@@ -19,7 +20,7 @@ class HomeController extends Controller
     public function upload(Request $request)
     {
         $this->validate($request, [
-            'file' => [
+            'pic' => [
                 // 必須
                 'required',
                 // アップロードされたファイルであること
@@ -31,14 +32,9 @@ class HomeController extends Controller
             ]
         ]);
 
-        if ($request->file('file')->isValid([])) {
-            $path = $request->file->store('public');
-            return view('home')->with('filename', basename($path));
-        } else {
-            return redirect()
-                ->back()
-                ->withInput()
-                ->withErrors();
-        }
+        $pic = base64_encode(file_get_contents($request->file('pic')->getRealPath()));
+
+
+            return view('home')->with('pic',$pic);
     }
 }
