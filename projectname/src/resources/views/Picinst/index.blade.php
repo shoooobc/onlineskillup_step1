@@ -5,13 +5,10 @@
     <link rel="stylesheet" type="text/css" href="/css/Picinst/index.css">
 </head>
 <body>
-<?php
-use Illuminate\Support\Facades\Auth;
-?>
 
 <?php
 
-if (!isset($_SESSION["username"])) {
+if ($Judgment == 1) {
     ?>
 <div class="container">
     <div class="item">ホーム</div>
@@ -30,5 +27,14 @@ if (!isset($_SESSION["username"])) {
 }
 ?>
 <hr>
+{{$Judgment}}
+@isset($bbs)
+    @foreach($bbs as $b)
+        <h2>{{ $b->name }}さんの直前の投稿</h2>
+        {{ $b->comment }}<br>
+        <img src="data:image/gif;base64,{{ $b->pic }}" height="200px" width="150px">
+        <br><hr>
+    @endforeach
+@endisset
 </body>
 </html>

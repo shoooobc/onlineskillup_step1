@@ -6,12 +6,8 @@
 </head>
 <body>
 <?php
-use Illuminate\Support\Facades\Auth;
-?>
 
-<?php
-
-if (Auth::check()==true) {
+if ($Judgment == 0) {
     ?>
     <div class="container">
         <div class="item">ホーム</div>
@@ -40,7 +36,7 @@ if (Auth::check()==true) {
     </ul>
 @endif
 
-<form action="{{ url('bbs') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
     <label>
     <input type="file" class="form-control" name="pic" placeholder="写真を選択">
     </label>
