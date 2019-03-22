@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Psr7\Request;
+
 class LogoutController extends Controller
 {
     // Indexページの表示
@@ -9,4 +11,11 @@ class LogoutController extends Controller
     {
         return view('Logoutpage');
     }
+    public function postLogout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->flush();
+        $this->middleware('guest')->except('logout');
+    }
+
 }

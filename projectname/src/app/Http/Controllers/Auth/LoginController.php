@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;// 追加！
 use Illuminate\Http\Request;// 追加！
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -37,7 +38,21 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+
+        Auth::logout();
         $this->middleware('guest')->except('logout');
+    }
+
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->forget('key');
+        $request->session()->flush();
+        // セッション用Cookieの破棄
+        setcookie(session_name(), '', 1);
+
+//        $this->middleware('guest')->except('logout');
+        return view('Logoutpage');
     }
 
     /**
@@ -69,9 +84,4 @@ class LoginController extends Controller
         return redirect('github');
     }
 
-    public function postLogout()
-    {
-        \Auth::logout();
-        return redirect()->to('/logout');
-    }
 }

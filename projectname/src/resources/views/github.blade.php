@@ -7,14 +7,19 @@
     <title>github</title>
 </head>
 <body>
-
-<a href="login/logout">ログアウトする</a>
+<?php
+//use Illuminate\Support\Facades\Auth;
+//
+if (Auth::check()==false) {
+    // ユーザーはログインしている
+?>
+<a href="{{ url('logout') }}">ログアウトする</a>
 <form action="/user" method="post">
     {{ csrf_field() }}
 
-    <div>お名前 : <input type="text" name="name" value="{{$user->name}}"></div>
+    <div>お名前 : <input type="text" name="name" ></div>
 
-    <div>コメント : <input type="text" name="comment" value="{{$user->comment}}"></div>
+    <div>コメント : <input type="text" name="comment" ></div>
 
 
     <input type="submit" value="Confirm">
@@ -39,6 +44,11 @@
 
     <input type="submit" value="Confirm">
 </form>
+<?php
+}
+?>
 
+{{--<p>青木省</p>--}}
+{{--ようこそ{{ $nickname }}さん--}}
 </body>
 </html>

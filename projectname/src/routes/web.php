@@ -11,6 +11,7 @@
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,8 +29,13 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 
 Route::post('user', 'User\UserController@updateUser');
 
-Route::get('/', 'HomeController@index');
-Route::post('/upload', 'HomeController@upload');
+Route::get('/', 'Picinst\HomeController@index');
+Route::get('/CreatePost', 'Picinst\HomeController@CreatePost');
 
-Route::get('login/logout', 'Auth\LoginController@postLogout')->name('logout');
-Route::get('/logout', 'LogoutController@index');
+
+//Route::post('/upload', 'HomeController@upload');
+
+//Route::get('/logout','Auth\LoginController@logout')->name('logout');
+Route::get('logout','Auth\LoginController@logout');
+//Route::get('login/logout','logoutController@postLogout');
+//Route::get('/logout', 'LogoutController@index');

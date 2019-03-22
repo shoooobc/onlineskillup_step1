@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    display: none;
+}
+
+
+.container {
+    position: fixed;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    text-align: center;
+}
+

@@ -4,6 +4,9 @@
     <title>Form</title>
 </head>
 <body>
+<?php
+use Illuminate\Support\Facades\Auth;
+?>
 <!-- エラーメッセージ。なければ表示しない -->
 @if ($errors->any())
     <ul>
@@ -13,9 +16,14 @@
     </ul>
 @endif
 
-<p>{{ $pic }}</p>
+<?php
 
-<img src="data:image/gif;base64,{{ $pic }}">
+if (Auth::check()==true) {
+?>
+
+<?php
+}
+?>
 
 <!-- フォーム -->
 <form action="{{ url('upload') }}" method="POST" enctype="multipart/form-data" class="post_form">
@@ -26,5 +34,8 @@
         <button class="btn btn-success">投稿</button>
     </div>
 </form>
+
+<a href="bbs">掲示板</a>
+
 </body>
 </html>

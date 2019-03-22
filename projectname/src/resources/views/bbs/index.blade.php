@@ -6,7 +6,21 @@
 <body>
 
 <h1>掲示板</h1>
-<a href="/login/github">ログインする</a>
+<?php
+use Illuminate\Support\Facades\Auth;
+$user = Auth::user();
+
+
+if ($user) {
+    ?>
+<a href="login/logout">ログアウトする</a>
+<?php
+}else{
+?>
+<a href="login/github">ログインする</a>
+<?php
+}
+?>
 
 <!-- エラーメッセージエリア -->
 @if ($errors->any())
@@ -27,7 +41,6 @@
     <br><hr>
     @endforeach
 @endisset
-
 <!-- フォームエリア -->
 <h2>フォーム</h2>
 <form action="{{ url('bbs') }}" method="POST" enctype="multipart/form-data">
@@ -45,6 +58,8 @@
     {{ csrf_field() }}
     <button class="btn btn-success"> 送信 </button>
 </form>
+
+<p>{{ $user }}</p>
 
 </body>
 </html>
