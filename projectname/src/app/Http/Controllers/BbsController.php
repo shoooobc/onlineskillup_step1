@@ -40,7 +40,6 @@ class BbsController extends Controller
 
         $path = base64_encode(file_get_contents($request->file('pic')->getRealPath()));
 
-//        $path = $request->file('pic')->store('public');
 
         Bbs::insert(["name" => $nme,"comment" => $comment,'pic'=>$path]);
 

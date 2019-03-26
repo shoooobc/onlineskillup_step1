@@ -4,30 +4,88 @@ namespace App\Http\Controllers\Picinst;
 
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Model\Bbs;
+use Socialite;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Model\Post;
+use Illuminate\Support\Facades\DB;
+
+
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-
-        if (Auth::check()) {
-            $Judgment = 1;
-            return view('Picinst/index',["Judgment" => $Judgment]);
-        }else{
-            $Judgment = 0;
-            return view('Picinst/index',["Judgment" => $Judgment]);
+        $Judgment=$this->Judgment($request);
+        $post = DB::select('select * from public.posts where flag=0');
+        if($Judgment==0){
+            $github_id=$this->github_user($request);
+            return view('Picinst/index')->with([
+                "Judgment" => $Judgment,
+                "github_id" =>$github_id,
+                "post" => $post,
+            ]);
         }
+        $github_id="guest";
+        return view('Picinst/index')->with([
+            "Judgment" => $Judgment,
+            "github_id" =>$github_id,
+            "post" => $post,
+        ]);
+
     }
 
-    public function CreatePost()
+    public function github_user(Request $request){
+        $token = $request->session()->get('github_token', null);
+        $user = Socialite::driver('github')->userFromToken($token);
+        $github_id=$user->user['login'];
+
+        return $github_id;
+    }
+
+    public function delete(Request $request){
+        $github_id=$this->github_user($request);
+        $post_id = $request->input('post_id');
+        DB::select('update posts set flag=1 where post_id=?',[$post_id]);
+        $post = DB::select('select * from public.posts where flag=0');
+        $Judgment=$this->Judgment($request);
+        return redirect('/')->with([
+            "Judgment" => $Judgment,
+            "github_id" =>$github_id,
+            "post" => $post,
+        ]);
+    }
+
+    public function Login(Request $request){
+        $Judgment=$this->Judgment($request);
+        if($Judgment==0){
+            return redirect('/');
+        }
+        return view('Picinst/LoginPage');
+    }
+
+
+    public function Judgment(Request $request)
     {
-        return view('Picinst/CreatePost');
+        if ($request->session()->get('github_token')!=null) {
+            $Judgment = 0;
+            return  $Judgment;
+        }
+        $Judgment = 1;
+        return $Judgment;
     }
-    public function create(Request $request) {
 
+    public function CreatePost(Request $request)
+    {
+        $Judgment=$this->Judgment($request);
+        if($Judgment==1){
+            return redirect('/');
+        }
+        $Judgment=$this->Judgment($request);
+        return view('Picinst/CreatePost',["Judgment" => $Judgment]);
+    }
+
+    public function create(Request $request) {
+        $Judgment=$this->Judgment($request);
         // バリデーションチェック
         $request->validate([
             'comment' => 'required|min:5|max:140',
@@ -43,20 +101,22 @@ class HomeController extends Controller
             ]
         ]);
 
-        // 投稿内容の受け取って変数に入れる
-        $nme = "aoki";
-        $comment = $request->input('comment');
+        $github_id=$this->github_user($request);
+
+        $caption = $request->input('comment');
 
         $path = base64_encode(file_get_contents($request->file('pic')->getRealPath()));
 
-//        $path = $request->file('pic')->store('public');
+        Post::insert(["github_id"=>$github_id,"caption" => $caption,'image'=>$path]);
 
-        Bbs::insert(["name" => $nme,"comment" => $comment,'pic'=>$path]);
-
-        $bbs = Bbs::all(); // 全データの取り出し
+        $post = DB::select('select * from public.posts where flag=0');
 
         if ($request->file('pic')->isValid([])) {
-            return view('Picinst.index')->with('bbs', $bbs);
+            return view('Picinst/index')->with([
+                "Judgment" => $Judgment,
+                "github_id" =>$github_id,
+                "post" => $post,
+            ]);
         } else {
             return redirect()
                 ->back()

@@ -48,11 +48,8 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->forget('key');
         $request->session()->flush();
-        // セッション用Cookieの破棄
-        setcookie(session_name(), '', 1);
-
-//        $this->middleware('guest')->except('logout');
-        return view('Logoutpage');
+        setcookie(session_name(), '', time() - 1800);
+        return redirect('loginpage');
     }
 
     /**
@@ -75,13 +72,13 @@ class LoginController extends Controller
         $github_user = Socialite::driver('github')->user();
 
         $now = date("Y/m/d H:i:s");
-        $app_user = DB::select('select * from public.user where github_id = ?', [$github_user->user['login']]);
+        $app_user = DB::select('select * from public.users where github_id = ?', [$github_user->user['login']]);
         if (empty($app_user)) {
-            DB::insert('insert into public.user (github_id, created_at, updated_at) values (?, ?, ?)', [$github_user->user['login'], $now, $now]);
+            DB::insert('insert into public.users (github_id, created_at, updated_at) values (?, ?, ?)', [$github_user->user['login'], $now, $now]);
         }
         $request->session()->put('github_token', $github_user->token);
 
-        return redirect('github');
+        return redirect('/');
     }
 
 }

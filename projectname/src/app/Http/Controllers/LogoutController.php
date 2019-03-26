@@ -14,7 +14,10 @@ class LogoutController extends Controller
     public function postLogout(Request $request)
     {
         Auth::logout();
+        $request->session()->forget('key');
         $request->session()->flush();
+        // セッション用Cookieの破棄
+        setcookie(session_name(), '', time() - 1800);
         $this->middleware('guest')->except('logout');
     }
 

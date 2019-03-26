@@ -35,6 +35,7 @@ if ($user) {
 <!-- 直前投稿エリア -->
 @isset($bbs)
     @foreach($bbs as $b)
+        <h1>{{ $b->id }}</h1>
     <h2>{{ $b->name }}さんの直前の投稿</h2>
     {{ $b->comment }}<br>
     <img src="data:image/gif;base64,{{ $b->pic }}" height="200px" width="150px">

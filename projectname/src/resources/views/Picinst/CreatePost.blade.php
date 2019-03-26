@@ -2,30 +2,32 @@
 <html>
 <head>
     <title>投稿</title>
-    <link rel="stylesheet" type="text/css" href="/css/Picinst/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/Picinst/style.css">
 </head>
 <body>
 <?php
 
 if ($Judgment == 0) {
-    ?>
-    <div class="container">
-        <div class="item">ホーム</div>
-        <div class="item">ログアウト</div>
-        <div class="item"><a href="CreatePost.blade.php">投稿</a></div>
-    </div>
-    <?php
+?>
+<div class="container">
+    <div class="item"><a href="/">ホーム</a></div>
+    <div class="item"><a href="{{url( 'logout' )}}">ログアウト</a></div>
+    <div class="item"><a href="{{url('CreatePost')}}">投稿</a></div>
+    <div class="item"><a href="{{url('Profile')}}">プロフィール</a></div>
+</div>
+<?php
 }else{
-    ?>
-    <div class="container">
-        <div class="item">ホーム</div>
-        <div class="item">ログイン</div>
-        <div class="item">投稿</div>
-    </div>
-    <?php
+?>
+<div class="container">
+    <div class="item"><a href="/">ホーム</a></div>
+    <div class="item"><a href="{{url( 'loginpage' )}}">ログイン</a></div>
+    <div class="item"><a href="{{url( 'loginpage' )}}">投稿</a></div>
+    <div class="item"><a href="{{url( 'loginpage' )}}">プロフィール</a></div>
+</div>
+<?php
 }
 ?>
-<hr>
+<br>
 <!-- エラーメッセージエリア -->
 @if ($errors->any())
     <h2>エラーメッセージ</h2>

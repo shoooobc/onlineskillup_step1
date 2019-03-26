@@ -7,9 +7,9 @@
 
 a{
     text-decoration: none;
-    color:black;
 }
-
+body{
+}
 
 .btn-flat-dashed-filled {
     color:red;
@@ -36,13 +36,8 @@ a{
     justify-content: space-around;
     text-align: center;
 }
-
 .pic{
-
+    border: 1px solid #aaa;
+    width: 100%;
     text-align: center;
 }
-.pic2{
-    margin: 2em 30%;
-    border: solid 3px #000000;
-}
-

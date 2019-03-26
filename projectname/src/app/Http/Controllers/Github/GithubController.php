@@ -26,7 +26,7 @@ class GithubController extends Controller
             ]
         ]);
 
-        $app_user = DB::select('select * from public.user where github_id = ?', [$github_user->user['login']]);
+        $app_user = DB::select('select * from public.users where github_id = ?', [$github_user->user['login']]);
 
         return view('github', [
             'user' => $app_user[0],
@@ -37,25 +37,4 @@ class GithubController extends Controller
             }, json_decode($res->getBody()))
         ]);
     }
-
-
-    public function createIssue(Request $request)
-    {
-        $token = $request->session()->get('github_token', null);
-        $user = Socialite::driver('github')->userFromToken($token);
-
-        $client = new \GuzzleHttp\Client();
-        $res = $client->request('POST', 'https://api.github.com/repos/' . $user->user['login'] . '/' . $request->input('repo') . '/issues', [
-            'auth' => [$user->user['login'], $token],
-            'json' => [
-                'title' => $request->input('title'),
-                'body' => $request->input('body')
-            ]
-        ]);
-
-        return view('done', [
-            'response' => json_decode($res->getBody())->html_url
-        ]);
-    }
-
 }
