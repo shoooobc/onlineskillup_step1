@@ -8,7 +8,7 @@ textarea{
     width:50%;
 }
 .outer{
-    padding: 20px;
+    padding-top: 20px;
     width: 100%;
 }
 
@@ -18,7 +18,7 @@ textarea{
 }
 label {
 background-color: white;
-width:47%;
+width:45%;
 border-radius: 5px;
 border: 1px solid;
 color: black;
@@ -31,7 +31,6 @@ label input {
 display: none;
 }
 
-
 .button{
     background-color: #f5f5f5;
     margin-top: 40px;
@@ -42,9 +41,16 @@ display: none;
     border-radius: 5px;
     transition: .4s;
 }
-
-
 .button:hover {
     background: white;
     color: black;
+}
+
+@media (max-width: 820px) {
+    textarea {
+        width: 90%;
+    }
+    label{
+        width: 80%;
+    }
 }

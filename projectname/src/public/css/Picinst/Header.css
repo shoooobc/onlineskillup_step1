@@ -30,7 +30,17 @@ body{
 .item{
     position: relative;
     top: 12px;
+
 }
 .item:hover a{
     color:#C0C0C0;
+}
+@media (max-width: 600px) {
+    .item{
+        font-size: 6px;
+    }
+    .search{
+        width: 70px;
+
+    }
 }

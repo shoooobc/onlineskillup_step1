@@ -5,6 +5,7 @@
     <link rel="stylesheet"  href="/css/Picinst/index.css">
     <link rel="stylesheet"  href="/css/Picinst/Header.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 
@@ -20,7 +21,7 @@ if ($Judgment == 0) {
     <div class="item">
         <form action="{{ url('/') }}" method="POST" class="search">
             {{ csrf_field() }}
-            <input type="text" name="search"  placeholder="キャプション検索">
+            <input type="text" name="search" class="search" placeholder="検索">
         </form>
     </div>
 </div>
@@ -47,33 +48,37 @@ if ($Judgment == 0) {
     @foreach($post as $b)
         <div class="outer">
             <div class="inner">
-                <a href="/User_Profile?github_id={{$b->github_id}}">{{ $b->github_id }}</a>
+                <a href="/User_Profile?github_id={{$b->github_id}}" class="user">{{ $b->github_id }}</a>
                 @if($github_id==$b->github_id)
-                    <a href="/Edit?post_id={{$b->post_id}}" >編集</a>
-                    <a href="/delete?post_id={{$b->post_id}}" >削除</a>
+                   <div class="operation">
+                       <a href="/Edit?post_id={{$b->post_id}}" class="Edit">編集</a><br>
+                       <a href="/delete?post_id={{$b->post_id}}" class="delete">削除</a>
+                   </div>
                 @endif
                 <br>
-                <img src="data:image/gif;base64,{{ $b->image }}" height="80%" width="80%">
+                <img src="data:image/gif;base64,{{ $b->image }}">
 
-                <br>{{ $b->caption }}<br>
-                <a href="/GoodList?post_id={{$b->post_id}}">いいねしたユーザ</a>
+                <p class="caption">{{ $b->caption }}</p>
+
+                <a href="/GoodList?post_id={{$b->post_id}}" class="GoodList">いいねしたユーザ</a>
                 <?php
-                if($Judgment==0){
-                    if($b->fav==0){
-                    ?>
-                    <a href="/good?post_id={{$b->post_id}}">&#9825;</a>
+                    if($Judgment==0){
+                        if($b->fav==0){
+                        ?>
+                        <a href="/good?post_id={{$b->post_id}}" class="good">&#9825;</a>
+                        <?php
+                        }else{
+                        ?>
+                        <a href="/good?post_id={{$b->post_id}}" class="good" style="color:red">&hearts;</a>
                     <?php
-                    }else{
+                    }}else{
                     ?>
-                    <a href="/good?post_id={{$b->post_id}}" style="color:red">&hearts;</a>
-                <?php
-                }}else{
-                ?>
-                &#9825;
-                <?php
-                }
-                ?>
-
+                   <a class="good">&#9825;</a>
+                    <?php
+                    }
+                    ?>
+<br>
+<br>
             </div>
         </div>
     @endforeach

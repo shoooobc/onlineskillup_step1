@@ -43,7 +43,7 @@ if ($Judgment == 0) {
                 <ul>
                     @isset($post)
                         @foreach($post as $b)
-                    <li><img src="data:image/gif;base64,{{ $b->image }}" height="200px" width="250px" ></li>
+                    <li><img  src="data:image/gif;base64,{{ $b->image }}" class="photo"></li>
                         @endforeach
                     @endisset
                 </ul>

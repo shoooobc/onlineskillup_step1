@@ -25,7 +25,7 @@
             </ul>
         @endif
         <form action="/EditPost?post_id={{$post->post_id}}" method="POST">
-            <img src="data:image/gif;base64,{{ $post->image }}" >
+            <img src="data:image/gif;base64,{{ $post->image }}" height="250px" width="200px">
             <br>
             <textarea name="comment">{{$post->caption}}</textarea>
             <br>

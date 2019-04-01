@@ -4,15 +4,8 @@
     width: 100%;
 }
 
-#grid {
-    position: absolute;
-    padding: 20px;
-    top: 10%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 780px;
+#grid{
+    width: 32%;
 }
 li {
     margin: 5px;
@@ -20,7 +13,11 @@ li {
     list-style: none;
 }
 
-
+@media (max-width: 820px) {
+    .photo{
+        width: 32%;
+    }
+}
 
 
 
