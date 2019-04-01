@@ -7,26 +7,9 @@
 
 a{
     text-decoration: none;
+    color: #000;
 }
 body{
-}
-
-.btn-flat-dashed-filled {
-    color:red;
-    text-align: center;
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    color: #67c5ff;
-    border: dashed 1px #67c5ff;
-    background: #f2fcff;
-    border-radius: 3px;
-    transition: .4s;
-}
-
-.btn-flat-dashed-filled:hover {
-    background: #cbedff;
-    color: #FFF;
 }
 
 .container {
@@ -37,7 +20,12 @@ body{
     text-align: center;
 }
 .pic{
-    border: 1px solid #aaa;
     width: 100%;
     text-align: center;
 }
+.pic2{
+    margin: 2em 30%;
+    border: solid 3px #000000;
+}
+
+

@@ -1,0 +1,39 @@
+/*プロフィール画面*/
+.outer{
+    padding: 20px;
+    width: 100%;
+}
+
+#grid {
+    position: absolute;
+    padding: 20px;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 780px;
+}
+li {
+    margin: 5px;
+    float: left;
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

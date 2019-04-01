@@ -17,7 +17,7 @@ class CreateLikeTable extends Migration
             $table->bigIncrements('like_id');
             $table->String('github_id')->unsigned();
             $table->integer('post_id')->unsigned();
-            $table->timestamps();
+            $table->integer('fav')->nullable()->default(0);
 
             $table->foreign('github_id')->references('github_id')->on('users');
             $table->foreign('post_id')->references('post_id')->on('post');

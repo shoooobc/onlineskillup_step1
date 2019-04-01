@@ -39,14 +39,11 @@ class LoginController extends Controller
     public function __construct()
     {
 
-        Auth::logout();
         $this->middleware('guest')->except('logout');
     }
 
 
     public function logout(Request $request){
-        Auth::logout();
-        $request->session()->forget('key');
         $request->session()->flush();
         setcookie(session_name(), '', time() - 1800);
         return redirect('loginpage');

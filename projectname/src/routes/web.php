@@ -16,15 +16,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user','UserController@index');
-Route::get('/bbs','BbsController@index');
-Route::post('/bbs','BbsController@create');
-
-//Route::get('github', 'Github\GithubController@top');
-//Route::post('github/issue', 'Github\GithubController@createIssue');
-//Route::get('login/github', 'Auth\LoginController@redirectToProvider');
-//Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
-
 //Route::post('user', 'User\UserController@updateUser');
 
 
@@ -33,12 +24,22 @@ Route::post('/bbs','BbsController@create');
 
 //Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
+
 //Picinstでの使われているファイル
-Route::get('/', 'Picinst\HomeController@index');
-Route::post('/', 'Picinst\HomeController@create');
-Route::get('/CreatePost', 'Picinst\HomeController@CreatePost');
-Route::get('/delete', 'Picinst\HomeController@delete');
-Route::get('logout','Auth\LoginController@logout');
+
+Route::get('', 'Picinst\HomeController@index');
+Route::post('/', 'Picinst\HomeController@search');
+
+Route::post('/create', 'Picinst\CreateController@create');
+Route::get('/CreatePost', 'Picinst\CreateController@CreatePost');
+Route::get('/delete', 'Picinst\CreateController@delete');
+Route::get('/good', 'Picinst\HomeController@good');
+Route::get('/GoodList', 'Picinst\HomeController@GoodList');
+
+//編集に使うURL
+Route::get('/Edit', 'Picinst\CreateController@Edit');
+Route::post('/EditPost', 'Picinst\CreateController@EditPost');
+
 Route::get('/loginpage','Picinst\HomeController@Login');
 Route::get('Profile','Picinst\ProfileController@index');
 Route::get('User_Profile','Picinst\ProfileController@user_profile');
@@ -47,3 +48,4 @@ Route::get('User_Profile','Picinst\ProfileController@user_profile');
 Route::get('github', 'Github\GithubController@top');
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('logout','Auth\LoginController@logout');

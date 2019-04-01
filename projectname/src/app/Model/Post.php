@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['github_id','caption','image','flag','fav']; // 追記したところ
+    protected $table       = 'post';
+    protected $primaryKey = 'post_id';
+    protected $fillable = ['post_id','github_id','caption','image','flag']; // 追記したところ
+    protected $casts = [
+        'post_id' => 'integer',
+    ];
 }

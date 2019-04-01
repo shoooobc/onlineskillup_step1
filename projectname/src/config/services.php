@@ -19,7 +19,11 @@ return [
         'client_secret' => '1fae9be7064ac2811683b4e1cc46afc2a67831ad', // 追加！
         'redirect' => '/login/github/callback',
     ],
-
+//    'github' => [
+//        'client_id' => env('GITHUB_CLIENT_ID'),         // 追加！
+//        'client_secret' => env('GITHUB_CLIENT_SECRET'), // 追加！
+//        'redirect' => '/login/github/callback',
+//    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

@@ -18,7 +18,6 @@ class CreatePostTable extends Migration
             $table->string('github_id')->unsigned();
             $table->String('caption')->nullable();
             $table->text('image')->nullable();
-            $table->integer('fav')->nullable()->default(0);
             $table->integer('flag')->nullable()->default(0);
             $table->timestamps();
 
