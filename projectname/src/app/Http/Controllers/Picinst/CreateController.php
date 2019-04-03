@@ -17,8 +17,7 @@ class CreateController extends Controller
         if($Judgment==1){
             return redirect('/');
         }
-        $Judgment=HomeController::Judgment($request);
-        return view('Picinst/CreatePost',["Judgment" => $Judgment]);
+        return view('Picinst/CreatePost');
     }
 
     //    投稿作成
