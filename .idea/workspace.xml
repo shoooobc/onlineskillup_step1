@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc91d122-6b27-4b1e-a576-237a4bf6d0cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/projectname/src/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/src/config/services.php" afterDir="false" />
-    </list>
+    <list default="true" id="dc91d122-6b27-4b1e-a576-237a4bf6d0cd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +41,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/projectname/src/config/services.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="20" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+                <state relative-caret-position="198">
+                  <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="20" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -189,7 +187,6 @@
         <option value="$PROJECT_DIR$/projectname/src/public/css/Picinst/GoodList.css" />
         <option value="$PROJECT_DIR$/projectname/src/public/css/Picinst/Create.css" />
         <option value="$PROJECT_DIR$/projectname/src/public/css/Picinst/Profile.css" />
-        <option value="$PROJECT_DIR$/projectname/README.md" />
         <option value="$PROJECT_DIR$/projectname/src/app/Http/Controllers/Picinst/CreateController.php" />
         <option value="$PROJECT_DIR$/projectname/src/app/Http/Controllers/Picinst/ProfileController.php" />
         <option value="$PROJECT_DIR$/projectname/src/app/Exceptions/Handler.php" />
@@ -205,6 +202,7 @@
         <option value="$PROJECT_DIR$/projectname/src/resources/views/Picinst/Edit.blade.php" />
         <option value="$PROJECT_DIR$/projectname/src/resources/views/Picinst/GoodList.blade.php" />
         <option value="$PROJECT_DIR$/projectname/src/resources/views/Picinst/index.blade.php" />
+        <option value="$PROJECT_DIR$/projectname/README.md" />
         <option value="$PROJECT_DIR$/projectname/src/config/services.php" />
       </list>
     </option>
@@ -239,91 +237,6 @@
               <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
               <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
               <item name="projectname" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Picinst" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="Picinst" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
-              <item name="projectname" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -375,12 +288,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552726427646</updated>
-      <workItem from="1552726429421" duration="228464000" />
+      <workItem from="1552726429421" duration="228976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228464000" />
+    <option name="totallyTimeSpent" value="228976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1920" height="1057" extended-state="6" />
@@ -613,16 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projectname/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="360">
-            <caret line="24" column="15" lean-forward="true" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projectname/src/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -770,10 +673,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projectname/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="375">
+            <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projectname/src/config/services.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="20" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state relative-caret-position="198">
+          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="20" selection-end-column="6" />
         </state>
       </provider>
     </entry>
