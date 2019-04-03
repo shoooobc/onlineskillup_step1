@@ -1,49 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>top</title>
+@extends('layouts.Header')
+
+@section('head')
+    <title>トップページ</title>
     <link rel="stylesheet"  href="/css/Picinst/index.css">
-    <link rel="stylesheet"  href="/css/Picinst/Header.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@endsection
 
-</head>
-<body>
-
-<?php
-
-if ($Judgment == 0) {
-?>
-<div class="container">
-    <div class="item"><a href="/">ホーム</a></div>
-    <div class="item"><a href="{{url('CreatePost')}}">投稿</a></div>
-    <div class="item"><a href="{{url('Profile')}}">プロフィール</a></div>
-    <div class="item"><a href="{{url( 'logout' )}}">ログアウト</a></div>
-    <div class="item">
-        <form action="{{ url('/') }}" method="POST" class="search">
-            {{ csrf_field() }}
-            <input type="text" name="search" class="search" placeholder="検索">
-        </form>
-    </div>
-</div>
-<?php
-}else{
-?>
-<div class="container">
-    <div class="item"><a href="/">ホーム</a></div>
-    <div class="item"><a href="{{url( 'loginpage' )}}">投稿</a></div>
-    <div class="item"><a href="{{url( 'loginpage' )}}">プロフィール</a></div>
-    <div class="item"><a href="{{url( 'loginpage' )}}">ログイン</a></div>
-    <div class="item">
-        <form action="{{ url('/') }}" method="POST" class="search">
-            {{ csrf_field() }}
-            <input type="text" name="search" placeholder="キャプション検索">
-        </form>
-    </div>
-</div>
-<?php
-}
-?>
-<br>
+@section('content')
+    <br>
 @isset($post)
     @foreach($post as $b)
         <div class="outer">
@@ -77,22 +40,20 @@ if ($Judgment == 0) {
                     <?php
                     }
                     ?>
-<br>
-<br>
+                <br>
+                <br>
             </div>
         </div>
     @endforeach
+<div class="PreviousNext">
+        @if($post->previousPageUrl()!=null)
+            <a href="{{$post->previousPageUrl()}}" class="button">←前</a>
+        @endif
+        @if($post->nextPageUrl()!=null)
+            <a href="{{$post->nextPageUrl()}}" class="button">次→</a>
+    @endif
+    </div>
+    <br>
 @endisset
+@endsection
 
-
-<div class="outer">
-    @if($post->previousPageUrl()!=null)
-    <a href="{{$post->previousPageUrl()}}" class="button">←前</a>
-    @endif
-    @if($post->nextPageUrl()!=null)
-    <a href="{{$post->nextPageUrl()}}" class="button">次→</a>
-    @endif
-</div>
-<br>
-</body>
-</html>

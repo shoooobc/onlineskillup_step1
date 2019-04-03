@@ -1,0 +1,23 @@
+.List{
+    padding-top: 10%;
+    margin-left: 40%;
+}
+
+.List p a{
+    font-size: 30px;
+}
+@media (max-width: 820px) {
+    .List{
+        padding-top: 15%;
+        margin-left: 35%;
+    }
+    .List p a{
+        font-size: 30px;
+    }
+}
+@media (max-width: 420px) {
+    .List{
+        padding-top: 20%;
+        margin-left: 25%;
+    }
+}

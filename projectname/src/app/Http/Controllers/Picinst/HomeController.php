@@ -83,9 +83,8 @@ class HomeController extends Controller
     //　いいね判定
     public function good(Request $request){
         $Judgment=$this->Judgment($request);
-
-        if($Judgment==0){
-            $post_id = $request->input('post_id');
+        $post_id = $request->input('post_id');
+        if($Judgment==0 and $post_id!=null){
             $github_id=$this->github_user($request);
             $like =DB::select('select * from public.like where post_id=? and github_id=?',[$post_id,$github_id]);
             $fav=DB::table('like')->select('fav')->where('post_id', $post_id)->where('github_id', $github_id)->get();

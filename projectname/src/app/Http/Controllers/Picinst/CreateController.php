@@ -47,16 +47,19 @@ class CreateController extends Controller
         if ($request->file('pic')->isValid([])) {
             return redirect('/');
         } else {
-            return redirect('/');
+            return redirect('/CreatePost');
         }
     }
 
     //編集するときの画面遷移
     public function Edit(Request $request){
         $post_id = $request->input('post_id');
-        $post=DB::table('post')
-            ->where('post_id', $post_id)->first();
-        return view('Picinst/Edit')->with('post',$post);
+        if($post_id!=null) {
+            $post = DB::table('post')
+                ->where('post_id', $post_id)->first();
+            return view('Picinst/Edit')->with('post', $post);
+        }
+        return redirect('/');
     }
     //編集
     public function EditPost(Request $request){

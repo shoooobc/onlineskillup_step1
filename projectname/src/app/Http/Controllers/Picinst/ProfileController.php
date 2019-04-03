@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Picinst;
 
 use App\Http\Controllers\Controller;
+use mysql_xdevapi\Exception;
 use Socialite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -38,6 +39,11 @@ class ProfileController extends Controller{
     public function user_profile(Request $request){
         $Judgment=HomeController::Judgment($request);
         $github_id = $request->input('github_id');
+
+        if($github_id==null){
+            return redirect('/');
+        }
+
         $like =DB::table('public.like')
             ->Join('post', function ($join)use($github_id) {
                 $join->on('post.post_id','=','public.like.post_id')

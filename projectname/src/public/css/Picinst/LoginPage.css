@@ -36,3 +36,11 @@ body{
     background: white;
     color: black;
 }
+
+@media (max-width: 820px) {
+    .outer{
+        padding-top: 250px;
+    }
+}
+
+

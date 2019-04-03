@@ -12,24 +12,20 @@
 */
 
 Auth::routes();
-Route::get('/', function () {
-    return view('welcome');
-});
-
-//Route::post('user', 'User\UserController@updateUser');
-
-
-
-//Route::post('/upload', 'HomeController@upload');
-
-//Route::get('/logout','Auth\LoginController@logout')->name('logout');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 
 //Picinstでの使われているファイル
 
-Route::get('', 'Picinst\HomeController@index');
+Route::get('/', 'Picinst\HomeController@index');
 Route::post('/', 'Picinst\HomeController@search');
 
+
+Route::get('/create', function () {
+    return redirect('/');
+});
 Route::post('/create', 'Picinst\CreateController@create');
 Route::get('/CreatePost', 'Picinst\CreateController@CreatePost');
 Route::get('/delete', 'Picinst\CreateController@delete');
@@ -38,11 +34,15 @@ Route::get('/GoodList', 'Picinst\HomeController@GoodList');
 
 //編集に使うURL
 Route::get('/Edit', 'Picinst\CreateController@Edit');
+Route::get('/EditPost', function () {
+    return redirect('/');
+});
 Route::post('/EditPost', 'Picinst\CreateController@EditPost');
 
+
 Route::get('/loginpage','Picinst\HomeController@Login');
-Route::get('Profile','Picinst\ProfileController@index');
-Route::get('User_Profile','Picinst\ProfileController@user_profile');
+Route::get('/Profile','Picinst\ProfileController@index');
+Route::get('/User_Profile','Picinst\ProfileController@user_profile');
 
 //ログイン時
 Route::get('github', 'Github\GithubController@top');

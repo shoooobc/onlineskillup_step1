@@ -21,8 +21,9 @@ body{
     justify-content: space-around;
     background: white;
     border-bottom: solid 1px #C0C0C0;
-}
+    z-index: 1;
 
+}
 .container a{
     color: black;
 }
@@ -37,10 +38,10 @@ body{
 }
 @media (max-width: 600px) {
     .item{
-        font-size: 6px;
+        font-size: 15px;
     }
     .search{
-        width: 70px;
+        width: 60px;
 
     }
 }

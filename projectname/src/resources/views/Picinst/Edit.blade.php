@@ -9,9 +9,15 @@
 <body>
 <div class="container">
     <div class="item"><a href="/">ホーム</a></div>
-    <div class="item"><a href="{{url( 'logout' )}}">ログアウト</a></div>
     <div class="item"><a href="{{url('CreatePost')}}">投稿</a></div>
     <div class="item"><a href="{{url('Profile')}}">プロフィール</a></div>
+    <div class="item"><a href="{{url( 'logout' )}}">ログアウト</a></div>
+    <div class="item">
+        <form action="{{ url('/') }}" method="POST" class="search">
+            {{ csrf_field() }}
+            <input type="text" name="search" class="search" placeholder="検索">
+        </form>
+    </div>
 </div>
 <div class="outer">
     <div class="CreatePost">
