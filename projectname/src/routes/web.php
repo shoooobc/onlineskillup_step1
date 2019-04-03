@@ -22,7 +22,6 @@ Auth::routes();
 Route::get('/', 'Picinst\HomeController@index');
 Route::post('/', 'Picinst\HomeController@search');
 
-
 Route::get('/create', function () {
     return redirect('/');
 });
