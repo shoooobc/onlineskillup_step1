@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc91d122-6b27-4b1e-a576-237a4bf6d0cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/nginx/site.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/site.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectname/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectname/laradock" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/laradock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectname/src/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/src/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectname/src/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/src/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectname/src/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/src/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectname/src/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/src/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectname/src/resources/lang/ja/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/src/resources/lang/ja/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectname/src/resources/views/layouts/Header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/src/resources/views/layouts/Header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectname/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/projectname/src/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectname/src/database/migrations/2019_03_18_051143_create-table.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projectname/src/config/services.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="300">
+              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
               <folding>
                 <marker date="1554296491480" expanded="true" signature="531:734" ph="..." />
               </folding>
@@ -211,7 +203,15 @@
               <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
               <item name="projectname" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skillup-php-step1-master1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="skillup-php-step1-master1" type="462c0819:PsiDirectoryNode" />
+              <item name="projectname" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -263,12 +263,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552726427646</updated>
-      <workItem from="1552726429421" duration="233694000" />
+      <workItem from="1552726429421" duration="234125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233694000" />
+    <option name="totallyTimeSpent" value="234125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1920" height="1057" extended-state="6" />
@@ -637,13 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projectname/src/resources/views/errors/404.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projectname/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -651,6 +644,13 @@
             <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projectname/src/resources/views/errors/404.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -663,8 +663,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projectname/src/config/services.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="300">
+          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
           <folding>
             <marker date="1554296491480" expanded="true" signature="531:734" ph="..." />
           </folding>
