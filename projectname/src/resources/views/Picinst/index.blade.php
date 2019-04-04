@@ -22,7 +22,6 @@
                 <img src="data:image/gif;base64,{{ $b->image }}">
 
                 <p class="caption">{{ $b->caption }}</p>
-
                 <a href="/GoodList?post_id={{$b->post_id}}" class="GoodList">いいねしたユーザ</a>
                 <?php
                     if($Judgment==0){
