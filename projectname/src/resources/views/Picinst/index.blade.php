@@ -14,14 +14,14 @@
                 <a href="/User_Profile?github_id={{$b->github_id}}" class="user">{{ $b->github_id }}</a>
                 @if($github_id==$b->github_id)
                    <div class="operation">
-                       <a href="/Edit?post_id={{$b->post_id}}" class="Edit">編集</a><br>
-                       <a href="/delete?post_id={{$b->post_id}}" class="delete">削除</a>
+                       <a href="/Edit?post_id={{$b->post_id}}&github_id={{$b->github_id}}" class="Edit">編集</a><br>
+                       <a href="/delete?post_id={{$b->post_id}}&github_id={{$b->github_id}}" class="delete">削除</a>
                    </div>
                 @endif
                 <br>
                 <img src="data:image/gif;base64,{{ $b->image }}">
 
-                <p class="caption">{{ $b->caption }}</p>
+                <p class="caption">{!!$b->caption!!}</p>
                 <a href="/GoodList?post_id={{$b->post_id}}" class="GoodList">いいねしたユーザ</a>
                 <?php
                     if($Judgment==0){

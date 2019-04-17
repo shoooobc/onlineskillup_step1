@@ -53,7 +53,8 @@ class CreateController extends Controller
     //編集するときの画面遷移
     public function Edit(Request $request){
         $post_id = $request->input('post_id');
-        if($post_id!=null) {
+        $github_id= $request->input('github_id');
+        if($post_id!=null&&$github_id==HomeController::github_user($request)) {
             $post = DB::table('post')
                 ->where('post_id', $post_id)->first();
             return view('Picinst/Edit')->with('post', $post);
@@ -76,8 +77,12 @@ class CreateController extends Controller
     //    投稿削除
     public function delete(Request $request){
         $post_id = $request->input('post_id');
-        DB::update('update post set flag=1 where post_id=?',[$post_id]);
-        DB::table('like')->where('post_id', '=', $post_id)->delete();
+        $github_id= $request->input('github_id');
+        if($github_id==HomeController::github_user($request)){
+            DB::update('update post set flag=1 where post_id=?',[$post_id]);
+            DB::table('like')->where('post_id', '=', $post_id)->delete();
+            return redirect('/');
+        }
         return redirect('/');
     }
 }

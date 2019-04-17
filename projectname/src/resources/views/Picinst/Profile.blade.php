@@ -2,7 +2,6 @@
 @section('head')
     <title>{{$github_id}}のプロフィール</title>
     <link rel="stylesheet"  href="/css/Picinst/Profile.css">
-
 @endsection
 @section('content')
         <div class="outer">

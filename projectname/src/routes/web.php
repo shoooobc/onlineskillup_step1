@@ -22,11 +22,12 @@ Auth::routes();
 Route::get('/', 'Picinst\HomeController@index');
 Route::post('/', 'Picinst\HomeController@search');
 
+Route::post('/create', 'Picinst\CreateController@create');
+Route::get('/CreatePost', 'Picinst\CreateController@CreatePost');
 Route::get('/create', function () {
     return redirect('/');
 });
-Route::post('/create', 'Picinst\CreateController@create');
-Route::get('/CreatePost', 'Picinst\CreateController@CreatePost');
+
 Route::get('/delete', 'Picinst\CreateController@delete');
 Route::get('/good', 'Picinst\HomeController@good');
 Route::get('/GoodList', 'Picinst\HomeController@GoodList');
